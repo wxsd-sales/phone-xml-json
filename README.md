@@ -34,7 +34,7 @@ The web app can be hosted locally for testing.  However, you may want to deploy 
   - replace `5000` in both places with the ```PORT``` used in your `.env` file.  
 
 ### 2.b. Run the widget webserver (npm)
-_Node.js version >= 21 must be installed on the system in order to run this through npm._
+_Node.js version >= 21.5 must be installed on the system in order to run this through npm._
 
 - It is recommended that you run this as a container (step 2.a.).
 - If you do not wish to run the webserver as a container (Docker), proceed with this step:
