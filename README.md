@@ -43,6 +43,20 @@ _Node.js version >= 21.5 must be installed on the system in order to run this th
 - Then inside this project on your terminal type: `npm run dev`
 - This should run the app on your ```PORT``` (from .env file)
 
+### 3. Set the Programmable Softkeys (PSK) on the Phones
+
+- a. I recommend testing that your ```BASE_URL``` returns XML before applying to your phones.  
+- b. You can modify the ```nme``` in the string below so that the button label says something other than ```MyApp```.  
+- c. Set the PSK for each phone to the following, where the ```url``` matches what you entered as the ```BASE_URL``` in your .env file.  
+- Examples:  
+    - ```fnc=xml;url=https://subdomain.domain.com/;nme=MyApp```
+    - ```fnc=xml;url=http://192.168.1.101:5000/;nme=MyApp```
+- Below are screenshot examples of how to set the PSKs for devices in Control Hub (Device Configuration):  
+Cisco 8845:  
+![Image](https://github.com/user-attachments/assets/38a6e5a6-efae-4f51-a984-df0d4a3bddca)
+Cisco 9861:  
+![Image](https://github.com/user-attachments/assets/83eff228-f1e5-4a4e-8ff6-d12d48e7a893)  
+**NOTE: PSK must be set to 'Enable: Yes' if the configuration option exists for that model**
 
 **Additional Improvements:**
 
