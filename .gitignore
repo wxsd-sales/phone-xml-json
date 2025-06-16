@@ -1,0 +1,5 @@
+*.env
+*.yaml
+.DS_STORE
+Notes
+package-lock.json
