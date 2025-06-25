@@ -64,9 +64,9 @@ _Node.js version >= 21.5 must be installed on the system in order to run this th
     - ```fnc=xml;url=http://192.168.1.101:5000/;nme=MyApp```
 - Below are screenshot examples of how to set the PSKs for devices in Control Hub (Device Configuration):  
 Cisco 8845:  
-![Image](https://github.com/user-attachments/assets/38a6e5a6-efae-4f51-a984-df0d4a3bddca)
+![Image](https://github.com/user-attachments/assets/f702030f-a6cb-4de6-8a2b-10dc02330395)
 Cisco 9861:  
-![Image](https://github.com/user-attachments/assets/83eff228-f1e5-4a4e-8ff6-d12d48e7a893)  
+![Image](https://github.com/user-attachments/assets/9998ea5b-7efe-4b8a-bc83-dd5b88388398)  
 **NOTE: PSK must be set to 'Enable: Yes' if the configuration option exists for that model**
 
 **Additional Improvements:**
