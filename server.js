@@ -38,8 +38,7 @@ function returnXML(pagePrompt, defaultBadge){
   if(!defaultBadge){
     defaultBadge = "";
   }
-  return `
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <CiscoIPPhoneInput>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>${pagePrompt}</Prompt>
@@ -63,8 +62,7 @@ function returnText(responseText, prompt){
   } else {
     prompt = '';
   }
-  return `
-      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>${prompt}</Prompt>
@@ -79,8 +77,7 @@ function returnText(responseText, prompt){
 }
 
 function confirmXML(badge, name){
-  return `
-      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>Press "Submit" to confirm that you are</Prompt>
