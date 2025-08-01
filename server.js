@@ -77,9 +77,6 @@ function returnText(responseText, prompt){
 }
 
 function confirmXML(badge, name){
-  if(name){
-    name = name.replace(",","")
-  }
   return `
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
