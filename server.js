@@ -197,7 +197,7 @@ async function punch(badge){
 
 router.get('/', (req, res) => {
   console.log(req.headers);
-  res.setHeader('Content-Type',"application/xml");
+  res.setHeader('Content-Type',"text/xml");
   res.send(returnXML());
 });
 
@@ -229,7 +229,7 @@ router.get('/xml', async (req, res) => {
   } else {
      xmlResponse = returnXML("ERROR: Badge number required.", req.query.badge);
   }
-  res.setHeader('Content-Type',"application/xml");
+  res.setHeader('Content-Type',"text/xml");
   res.send(xmlResponse);
 });
 
