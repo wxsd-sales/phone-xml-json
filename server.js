@@ -73,7 +73,7 @@ function returnText(responseText, prompt){
           <Position>4</Position>
         </SoftKeyItem>
       </CiscoIPPhoneText>
-  `
+  `;
 }
 
 function confirmXML(badge, name){
@@ -81,13 +81,23 @@ function confirmXML(badge, name){
     name = name.replace(",","")
   }
   //<URL>${returnUrl}/punch?badge=${badge}</URL>
+  // <SoftKeyItem>
+  //         <Name>Submit</Name>
+  //         <URL>SoftKey:Exit</URL>
+  //         <Position>3</Position>
+  //       </SoftKeyItem>
   return `
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>Press Submit to confirm that you are</Prompt>
         <Text>${name}</Text>
+        <SoftKeyItem>
+          <Name>Back</Name>
+          <URL>SoftKey:Exit</URL>
+          <Position>4</Position>
+        </SoftKeyItem>
       </CiscoIPPhoneText>
-  `
+  `;
 }
 
 async function authenticate(){
