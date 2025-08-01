@@ -38,7 +38,7 @@ function returnXML(pagePrompt, defaultBadge){
   if(!defaultBadge){
     defaultBadge = "";
   }
-  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  return `
     <CiscoIPPhoneInput>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>${pagePrompt}</Prompt>
@@ -62,7 +62,7 @@ function returnText(responseText, prompt){
   } else {
     prompt = '';
   }
-  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  return `
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>${prompt}</Prompt>
@@ -81,7 +81,7 @@ function confirmXML(badge, name){
     name = name.replace(",","")
   }
   //<URL>${returnUrl}/punch?badge=${badge}</URL>
-  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  return `
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>Press Submit to confirm that you are</Prompt>
