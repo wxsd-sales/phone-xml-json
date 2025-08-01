@@ -80,17 +80,16 @@ function confirmXML(badge, name){
   if(name){
     name = name.replace(",","")
   }
-  //<URL>${returnUrl}/punch?badge=${badge}</URL>
-  // <SoftKeyItem>
-  //         <Name>Submit</Name>
-  //         <URL>SoftKey:Exit</URL>
-  //         <Position>3</Position>
-  //       </SoftKeyItem>
   return `
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>Submit to confirm</Prompt>
         <Text>${name}</Text>
+        <SoftKeyItem>
+          <Name>Submit</Name>
+          <URL>${returnUrl}/punch?badge=${badge}</URL>
+          <Position>3</Position>
+        </SoftKeyItem>
         <SoftKeyItem>
           <Name>Back</Name>
           <URL>SoftKey:Exit</URL>
