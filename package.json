@@ -1,7 +1,7 @@
 {
-  "name": "share-to-webex",
+  "name": "cisco-phoneos-xml",
   "version": "1.0.0",
-  "description": "Share to Webex Meeting",
+  "description": "XML Server for PSK on Cisco PhoneOS",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
