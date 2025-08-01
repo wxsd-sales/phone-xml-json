@@ -77,10 +77,13 @@ function returnText(responseText, prompt){
 }
 
 function confirmXML(badge, name){
+  if(name){
+    name = name.replace(",","");
+  }
   return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
-        <Prompt>Press "Submit" to confirm that you are</Prompt>
+        <Prompt>Press Submit to confirm that you are</Prompt>
         <Text>${name}</Text>
         <SoftKeyItem>
           <Name>Submit</Name>
