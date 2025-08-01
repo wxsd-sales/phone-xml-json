@@ -89,7 +89,7 @@ function confirmXML(badge, name){
   return `
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
-        <Prompt>Press Submit to confirm that you are</Prompt>
+        <Prompt>Submit to confirm</Prompt>
         <Text>${name}</Text>
         <SoftKeyItem>
           <Name>Back</Name>
