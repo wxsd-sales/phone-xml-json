@@ -42,7 +42,7 @@ function returnXML(pagePrompt, defaultBadge){
     <CiscoIPPhoneInput>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>${pagePrompt}</Prompt>
-        <URL>${returnUrl}</URL>
+        <URL>${returnUrl}/default/none</URL>
         <InputItem>
             <DisplayName>Badge</DisplayName>
             <QueryStringParam>badge</QueryStringParam>
@@ -84,7 +84,7 @@ function confirmXML(badge, name){
         <Text>${name}</Text>
         <SoftKeyItem>
           <Name>Submit</Name>
-          <URL>${returnUrl}?command=punch&badge=${badge}&name=${encodeURIComponent(name)}</URL>
+          <URL>${returnUrl}/punch/${encodeURIComponent(name)}?badge=${badge}</URL>
           <Position>3</Position>
         </SoftKeyItem>
         <SoftKeyItem>
@@ -203,16 +203,18 @@ router.get('/', (req, res) => {
   res.send(xmlResponse);
 });
 
-router.get('/xml', async (req, res) => {
+router.get('/xml/:command/:name', async (req, res) => {
   console.log(req.headers);
   let xmlResponse;
+  console.log(req.path);
+  console.log(req.query);
   if(req.query.badge){
     //let result = await punch(req.query.badge);
-    if(req.query.command === "punch"){
+    if(req.params.command === "punch"){
       let result = await punch(req.query.badge);
       if(result['success']){
-        if(req.query.name){
-          xmlResponse = returnText(`Punch recorded for ${req.query.name}`);
+        if(req.params.name){
+          xmlResponse = returnText(`Punch recorded for ${req.params.name}`);
         } else {
           xmlResponse = returnText("Success");
         }
