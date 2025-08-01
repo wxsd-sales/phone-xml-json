@@ -100,10 +100,7 @@ function confirmXML(badge, name){
 }
 
 async function authenticate(){
-  let resp = await fetch(process.env.ROPCURL,{
-    method: "POST",
-    headers:{'Content-Type': 'application/x-www-form-urlencoded'},
-    body: new URLSearchParams({
+  let body = new URLSearchParams({
       'client_id':process.env.CLIENT_ID,
       'client_secret':process.env.CLIENT_SECRET,
       'username':process.env.USERNAME,
@@ -111,8 +108,14 @@ async function authenticate(){
       'grant_type':process.env.GRANT_TYPE,
       'realm':process.env.REALM,
       'audience':process.env.AUDIENCE
-    })
   });
+  console.log(body);
+  let resp = await fetch(process.env.ROPCURL,{
+    method: "POST",
+    headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+    body: body
+  });
+  
   let json = await resp.json();
   if(json.access_token){
     console.log(`authenticate succeeded. expires_in:${json.expires_in}`);
