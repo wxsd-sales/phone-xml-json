@@ -100,10 +100,11 @@ function confirmXML(badge, name){
 }
 
 async function authenticate(){
+  let username = process.env.MY_USERNAME || process.env.USERNAME;
   let body = new URLSearchParams({
       'client_id':process.env.CLIENT_ID,
       'client_secret':process.env.CLIENT_SECRET,
-      'username':process.env.USERNAME,
+      'username':username,
       'password':process.env.PASSWORD,
       'grant_type':process.env.GRANT_TYPE,
       'realm':process.env.REALM,
