@@ -230,7 +230,8 @@ router.get('/xml/:command', async (req, res) => {
       let result = await getPerson(req.query.badge);
       if(result['success']){
         console.log(result);
-        xmlResponse = confirmXML(req.query.badge, result["message"]);
+        //xmlResponse = confirmXML(req.query.badge, result["message"]);
+        xmlResponse = returnText(result["message"], "Press Submit to confirm that you are");
       } else {
         xmlResponse = returnText(result["message"], 'Error');
       }
