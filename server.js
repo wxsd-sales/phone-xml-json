@@ -86,16 +86,6 @@ function confirmXML(badge, name){
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>Press Submit to confirm that you are</Prompt>
         <Text>${name}</Text>
-        <SoftKeyItem>
-          <Name>Submit</Name>
-          <URL>SoftKey:Exit</URL>
-          <Position>3</Position>
-        </SoftKeyItem>
-        <SoftKeyItem>
-          <Name>Retry</Name>
-          <URL>SoftKey:Exit</URL>
-          <Position>4</Position>
-        </SoftKeyItem>
       </CiscoIPPhoneText>
   `
 }
