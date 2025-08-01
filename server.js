@@ -42,7 +42,7 @@ function returnXML(pagePrompt, defaultBadge){
     <CiscoIPPhoneInput>
         <Title>${process.env.APP_TITLE}</Title>
         <Prompt>${pagePrompt}</Prompt>
-        <URL method="post">${returnUrl}</URL>
+        <URL>${returnUrl}</URL>
         <InputItem>
             <DisplayName>Badge</DisplayName>
             <QueryStringParam>badge</QueryStringParam>
@@ -198,7 +198,9 @@ async function punch(badge){
 router.get('/', (req, res) => {
   console.log(req.headers);
   res.setHeader('Content-Type',"text/xml");
-  res.send(returnXML());
+  let xmlResponse = returnXML();
+  console.log(xmlResponse);
+  res.send(xmlResponse);
 });
 
 router.get('/xml', async (req, res) => {
