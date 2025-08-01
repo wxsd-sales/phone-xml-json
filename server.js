@@ -78,8 +78,9 @@ function returnText(responseText, prompt){
 
 function confirmXML(badge, name){
   if(name){
-    name = name.replace(",","");
+    name = name.replace(",","")
   }
+  //<URL>${returnUrl}/punch?badge=${badge}</URL>
   return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
       <CiscoIPPhoneText>
         <Title>${process.env.APP_TITLE}</Title>
@@ -87,7 +88,7 @@ function confirmXML(badge, name){
         <Text>${name}</Text>
         <SoftKeyItem>
           <Name>Submit</Name>
-          <URL>${returnUrl}/punch?badge=${badge}</URL>
+          <URL>SoftKey:Exit</URL>
           <Position>3</Position>
         </SoftKeyItem>
         <SoftKeyItem>
