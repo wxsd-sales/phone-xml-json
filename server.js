@@ -202,6 +202,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/xml', async (req, res) => {
+  console.log(req.headers);
   let xmlResponse;
   if(req.query.badge){
     //let result = await punch(req.query.badge);
@@ -229,6 +230,7 @@ router.get('/xml', async (req, res) => {
   } else {
      xmlResponse = returnXML("ERROR: Badge number required.", req.query.badge);
   }
+  console.log(xmlResponse);
   res.setHeader('Content-Type',"text/xml");
   res.send(xmlResponse);
 });
