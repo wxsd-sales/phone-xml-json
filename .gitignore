@@ -2,5 +2,8 @@
 prod.env
 *.yaml
 .DS_STORE
+node_modules/
 Notes
 package-lock.json
+timezones.json
+iana_timezones.json
